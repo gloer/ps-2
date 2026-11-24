@@ -1,0 +1,53 @@
+body {
+  padding: 2rem;
+}
+
+.ps {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  border: 2px solid orange;
+  aspect-ratio: 18 / 7;
+  gap: 1rem;  
+}
+
+.sub {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: subgrid;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;  
+  pointer-events: none;  
+
+  &.info {
+    grid-column: 3 / 13;
+    grid-row: 1 / 4;
+    padding: 2rem;
+
+    div {
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+    }
+
+  }
+
+  span {
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    pointer-events: all;
+    border: 1px solid gray;
+    cursor: pointer;
+    transition: .5s;
+       
+    
+  }
+}
+
+.sub:has(span:hover) span {
+  transform: scale(1.2);
+  border-width: 2px;  
+}
